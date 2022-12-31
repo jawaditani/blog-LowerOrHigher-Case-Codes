@@ -1,0 +1,24 @@
+public class Solution
+{
+    public string ToLower(string text)
+    {
+        StringBuilding  result = new StringBuilder();
+        
+        foreach (char c in text)
+        {
+            result.Append((c >= 'A' && c <= 'Z') ? (char)(c + 32) : c);
+        }
+        
+        return result.ToString();
+    }
+}
+
+class HelloWorld
+{
+    static void Main()
+    {
+        string text = "Dark Roast Please!";
+        Solution solution = new Solution();
+        solution.ToLower(text);
+    }
+}
