@@ -1,0 +1,17 @@
+public class Solution {
+
+    public string ToLower (string text)
+      {
+        string lowered = text.ToLower();
+        return lowered;
+      }
+}
+
+class HelloWord {
+    static void Main()
+      {
+          string text = "Dark Roast Please!";
+          Solution solution = new Solution();
+          solution.ToLower(text);
+      }
+}
