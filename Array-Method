@@ -1,0 +1,40 @@
+public class Solution
+{
+    public string ToLower(string text)
+    {
+        // If the text is entirely empty just return the value right now...
+        string result = "";
+        if (string.IsNullOrEmpty(text))
+        {
+            return text;
+        }
+        
+        // Split the string into a character array so we can use the unicode calculation - from lower to higher is character + 32... You can do the reverse for ToUpper of course...
+        char[] chars = text.ToCharArray();
+        
+        // If the letter is anywhere from A to Z (capital case) then convert that to a lower case...
+        for (int i = 0; i < text.Length; i++)
+        {
+            if (chars[i] >= 'A' && chars[i] <= 'Z')
+            {
+                result += (char)(chars[i] + 32);
+            }
+            // Anything that's not capital letter return it
+            else
+            {
+                result += chars[i];
+            }
+        }
+        return result;
+    }
+}
+
+class HelloWorld
+{
+    static void Main()
+    {
+        string text = "Dark Roast Please!";
+        Solution solution = new Solution();
+        solution.ToLower(text);
+    }
+}
